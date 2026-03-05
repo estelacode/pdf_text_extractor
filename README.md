@@ -4,12 +4,12 @@
 A web-based app to extract and parse text from PDFs using PyMuPDF and Llama-Parse.
 Interactive PDF upload and text display via Gradio, fully Dockerized for optional deployment.
 
-## 🎬Demo
+## Demo
 ![gradio ui](https://github.com/estelacode/pdf_text_extractor/blob/master/docs/ui%20gradio/gradio_ui.jpg)
 ![gradio_ui_text_extraction_methods](https://github.com/estelacode/pdf_text_extractor/blob/master/docs/ui%20gradio/gradio_ui_text_extraction_methods.jpg)
 ![Llama-Parse Output](https://github.com/estelacode/pdf_text_extractor/blob/master/docs/outputs/llamaparse/llamaparse_output.jpg)
 
-## ⚡ Features
+## Features
 `Functionality`
 - Extracting text from PDFs using PyMuPDF
 - Processing and parsing text with Llama-Parse
@@ -19,14 +19,14 @@ Interactive PDF upload and text display via Gradio, fully Dockerized for optiona
 - Dockerized deployment for quick and reproducible setup
 - Architecture documentation with high-level, sequence, and flow diagrams
 
-## 🧩 Architecture
+## Architecture
 High-level structure of the application:
 ![High Level Architecture Diagram](docs/diagrams/high_level_architecture_diagram.jpg)
 
-## `Sequence Diagram`
+### `Sequence Diagram`
 ![Sequence Diagram](docs/diagrams/sequence_diagram.png)
 
-### Sequence Flow:
+#### Sequence Flow:
 1. User uploads PDF via Frontend.
 2. Frontend receives the PDF.
 3. Frontend sends the PDF to the Backend for processing.
@@ -35,7 +35,7 @@ High-level structure of the application:
 6. Backend returns results to  Frontend.
 7. Frontend displays extracted text to user.
 
-## 💻 Tech Stack
+## Tech Stack
 Backend: 
 ![Python](https://img.shields.io/badge/Python-DDDDDD?style=for-the-badge&logo=python&logoColor=black)![3.13.3](https://img.shields.io/badge/3.13.3-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) 
 ![uv](https://img.shields.io/badge/uv-DDDDDD?style=for-the-badge&logo=uv&logoColor=black)![0.9.13](https://img.shields.io/badge/%3E%3D0.9.13-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) 
@@ -48,7 +48,7 @@ Frontend:
 Infrastructure:
 ![Docker](https://img.shields.io/badge/Docker-DDDDDD?style=for-the-badge&logo=docker&logoColor=2496ED)
 
-## ⚙️ Setup
+## Setup
 ```bash
 git clone https://github.com/estelacode/pdf_text_extractor.git
 cd pdf_text_extractor
@@ -65,13 +65,13 @@ uv pip install -e .
 Configure .env file (copy from .env.example)
 ```
 
-## ▶️ Usage 
+## Usage 
 ```bash
 uv run main.py
 # Navigate to http://localhost:7860/
 ```
 
-## 📂 Project Structure
+## Project Structure
 ```bash
 pdf_text_extractor/
 ├── .dockerignore        # Files and folders to exclude from Docker builds
@@ -92,7 +92,7 @@ pdf_text_extractor/
 └── uv.lock              # Dependency lock file for uv
 ```
 
-## 🚀 Roadmap 
+## Roadmap 
 - Improve text extraction: Maintain original structure, including paragraphs, headings, and columns
 - Add image extraction: Detect and save images from PDFs.
 - Add table extraction: Detect tables and export them as CSV or JSON.
@@ -100,14 +100,14 @@ pdf_text_extractor/
 - Add automated tests
 - Deploy to cloud: Make the app accessible from anywhere
 
-## 🛠️ DevOps/ Build / Deployment
+## DevOps/ Build / Deployment
 
-### Build the artifact
+Build the artifact
 ```bash
 # Generate the whl file in the dist folder
 uv build 
 ```
-### Docker Deployment
+Docker Deployment
 ```bash
 # Build Docker image
 docker build -t pdf_text_extractor .
