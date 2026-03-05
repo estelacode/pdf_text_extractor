@@ -36,18 +36,19 @@ High-level structure of the application:
 7. Frontend displays extracted text to user.
 
 ## Tech Stack
+
 `Backend`
 
-![Python](https://img.shields.io/badge/Python-black?style=for-the-badge&logo=python&logoColor=white) ![3.13.3](https://img.shields.io/badge/3.13.3-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)  ![llama-cloud-services](https://img.shields.io/badge/llama--cloud--services-black?style=for-the-badge&logoColor=white) ![>=0.6.35](https://img.shields.io/badge/%3E%3D0.6.35-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) ![PyMuPDF](https://img.shields.io/badge/PyMuPDF-black?style=for-the-badge&logoColor=white) ![>=1.26.1](https://img.shields.io/badge/%3E%3D1.26.1-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
+![Python](https://img.shields.io/badge/Python-black?style=for-the-badge&logo=python&logoColor=white) ![3.13.3](https://img.shields.io/badge/3.13.3-D4A017?style=for-the-badge&logoColor=white&labelColor=D4A017&color=D4A017) ![llama-cloud-services](https://img.shields.io/badge/llama--cloud--services-black?style=for-the-badge&logoColor=white) ![>=0.6.35](https://img.shields.io/badge/%3E%3D0.6.35-D4A017?style=for-the-badge&logoColor=white&labelColor=D4A017&color=D4A017) ![PyMuPDF](https://img.shields.io/badge/PyMuPDF-black?style=for-the-badge&logoColor=white) ![>=1.26.1](https://img.shields.io/badge/%3E%3D1.26.1-D4A017?style=for-the-badge&logoColor=white&labelColor=D4A017&color=D4A017)
 
 `Frontend`
 
-![Gradio](https://img.shields.io/badge/Gradio-black?style=for-the-badge&logo=gradio&logoColor=white) ![5.34.2](https://img.shields.io/badge/5.34.2-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
+![Gradio](https://img.shields.io/badge/Gradio-black?style=for-the-badge&logo=gradio&logoColor=white) ![5.34.2](https://img.shields.io/badge/5.34.2-D4A017?style=for-the-badge&logoColor=white&labelColor=D4A017&color=D4A017)
 
-`Infraestructure | Dev Tools`
+`Infrastructure | Dev Tools`
 
-![Docker](https://img.shields.io/badge/Docker-black?style=for-the-badge&logo=docker&logoColor=white)
-![uv](https://img.shields.io/badge/uv-black?style=for-the-badge&logo=uv&logoColor=white) ![0.9.13](https://img.shields.io/badge/%3E%3D0.9.13-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
+![Docker](https://img.shields.io/badge/Docker-black?style=for-the-badge&logo=docker&logoColor=white) ![28.4.0](https://img.shields.io/badge/28.4.0-D4A017?style=for-the-badge&logoColor=white&labelColor=D4A017&color=D4A017) 
+![uv](https://img.shields.io/badge/uv-black?style=for-the-badge&logo=uv&logoColor=white) ![0.9.13](https://img.shields.io/badge/%3E%3D0.9.13-D4A017?style=for-the-badge&logoColor=white&labelColor=D4A017&color=D4A017)
 
 ## Setup
 ```bash
