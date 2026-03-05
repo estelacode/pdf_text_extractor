@@ -1,29 +1,67 @@
 # PDF Text Extractor
 
-## Objective
-Developed an app to extract text from PDFs using libraries such as PyMuPDF and llama-parse for text extraction.
+## Overview
+A web-based app to extract and parse text from PDFs using PyMuPDF and Llama-Parse.
+Interactive PDF upload and text display via Gradio, fully Dockerized for optional deployment.
+
+## Demo
+![gradio ui](https://github.com/estelacode/pdf_text_extractor/blob/master/docs/ui%20gradio/gradio_ui.jpg)
+![gradio_ui_text_extraction_methods](https://github.com/estelacode/pdf_text_extractor/blob/master/docs/ui%20gradio/gradio_ui_text_extraction_methods.jpg)
+![Llama-Parse Output](https://github.com/estelacode/pdf_text_extractor/blob/master/docs/outputs/llamaparse/llamaparse_output.jpg)
+
+## ⚡ Features
+`Functionality`
+- Extracting text from PDFs using PyMuPDF
+- Processing and parsing text with Llama-Parse
+- Interactive web interface via Gradio for PDF upload and text display
+
+`Infrastructure / Deployment`
+- Dockerized deployment for quick and reproducible setup
+- Architecture documentation with high-level, sequence, and flow diagrams
 
 ## Architecture
-A high-level architecture diagram that illustrates the structure of a monolithic application deployed inside a Docker container. It shows the interaction between the user, the frontend, and the backend.
-
+High-level structure of the application:
 ![High Level Architecture Diagram](docs/diagrams/high_level_architecture_diagram.jpg)
 
 ## `Sequence Diagram`
 ![Sequence Diagram](docs/diagrams/sequence_diagram.png)
-Basic flow for the sequence diagram:
 
-1. The User sends a PDF to the Frontend.
-2. The Frontend receives the PDF.
-3. The Frontend sends the PDF to the Backend for processing.
-4. The Backend uses PyMuPDF to extract text from the PDF.
-5. The Backend uses Llama-Parse to process (parse or analyze) the extracted text.
-6. The Backend returns the processed text to the Frontend.
-7. The Frontend displays the text to the User.
+### Sequence Flow:
+1. User uploads PDF via Frontend.
+2. Frontend receives the PDF.
+3. Frontend sends the PDF to the Backend for processing.
+4. Backend extract text with PyMuPDF from the PDF.
+5. Backend processes text with Llama-Parse.
+6. Backend returns results to  Frontend.
+7. Frontend displays extracted text to user.
 
 ## Tech Stack
+Backend:![Python](https://img.shields.io/badge/Python-white?style=for-the-badge&logo=python&logoColor=black)![3.13.3](https://img.shields.io/badge/3.13.3-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) ![uv](https://img.shields.io/badge/uv-white?style=for-the-badge&logo=uv&logoColor=black)![0.9.13](https://img.shields.io/badge/0.9.13-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) ![llama-cloud-services](https://img.shields.io/badge/llama--cloud--services-white?style=for-the-badge&logoColor=black)![>=0.6.35](https://img.shields.io/badge/%3E%3D0.6.35-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) ![PyMuPDF](https://img.shields.io/badge/PyMuPDF-white?style=for-the-badge&logoColor=black)![>=1.26.1](https://img.shields.io/badge/%3E%3D1.26.1-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
 
-![Python](https://img.shields.io/badge/Python-white?style=for-the-badge&logo=python&logoColor=black)![3.13.3](https://img.shields.io/badge/3.13.3-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) ![Gradio](https://img.shields.io/badge/Gradio-white?style=for-the-badge&logo=gradio&logoColor=black)![5.34.2](https://img.shields.io/badge/5.34.2-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) ![uv](https://img.shields.io/badge/uv-white?style=for-the-badge&logo=uv&logoColor=black)![0.9.13](https://img.shields.io/badge/0.9.13-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) ![llama-cloud-services](https://img.shields.io/badge/llama--cloud--services-white?style=for-the-badge&logoColor=black)![>=0.6.35](https://img.shields.io/badge/%3E%3D0.6.35-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) ![PyMuPDF](https://img.shields.io/badge/PyMuPDF-white?style=for-the-badge&logoColor=black)![>=1.26.1](https://img.shields.io/badge/%3E%3D1.26.1-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
+Frontend: ![Gradio](https://img.shields.io/badge/Gradio-white?style=for-the-badge&logo=gradio&logoColor=black)![5.34.2](https://img.shields.io/badge/5.34.2-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) 
 
+## Setup
+```bash
+git clone https://github.com/estelacode/pdf_text_extractor.git
+cd pdf_text_extractor
+
+### Create & activate virtual environment
+py -3.13 -m venv .venv
+source .venv/bin/activate  # Linux/macOS
+.venv\Scripts\activate     # Windows
+
+### Install dependencies
+uv pip install -e .
+
+### Configure environment
+Configure .env file (copy from .env.example)
+```
+
+## Usage 
+```bash
+uv run main.py
+# Navigate to http://localhost:7860/
+```
 
 ## Project Structure
 ```bash
@@ -46,81 +84,7 @@ pdf_text_extractor/
 └── uv.lock              # Dependency lock file for uv
 ```
 
-## Installation 
 
-✅ 1. Clone the repository
-```bash
-git clone https://github.com/estelacode/pdf_text_extractor.git
-cd pdf_text_extractor
-```
-
-✅ 2. Create and activate a virtual environment
-```bash
-py -3.13 -m venv .venv
-.venv\Scripts\activate  # Windows
-# or
-source .venv/bin/activate # Linux/macOS
-```
-✅ 3. Install UV
-```bash
-pip install uv
-```
-
-✅ 4. Install dependences from .toml file.
-```bash
-uv pip install -e .
-```
-
-✅ 5. Configure the .env file
-
-
-## Project Setup
-
-☑️ Step 1: Create Virtual Enviroment
-```bash
-py -3.13 -m venv .venv
-```
-
-☑️ Step 2: Activate Virtual Enviroment
-```bash
-.venv\Script\activate
-```
-
-☑️ Step 3: Install UV
-```bash
-pip install uv
-```
-
-☑️ Step 4: Create a project with uv
-```bash
-uv init
-```
-☑️ Step 5: Link my local repository to my Github remote repository
-```bash
-git remote add origin https://github.com/estelacode/pdf_text_extractor.git
-git remote -v  # Verify the remote repository is added
-```
-
-☑️ Step 6: Add first commit and push the current branch and set the remote as upstream
-```bash
-git add README.md
-git commit -m "README.md"
-git push --set-upstream origin master 
-git push -u origin master
-```
-
-☑️ Step 7:  Add and remove dependencies
-```bash
-uv add [OPTIONS] <PACKAGES>...  # Add dependencies to the project
-uv remove [OPTIONS] <PACKAGES>... # Remove dependencies from the project.
-```
-
-## Usage
-```bash
-cd pdf_text_extractor
-uv run main.py 
-# navigate to http://localhost:7860/
-```
 
 ## Build the artifact
 ```bash
