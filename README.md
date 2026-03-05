@@ -4,7 +4,7 @@
 A web-based app to extract and parse text from PDFs using PyMuPDF and Llama-Parse.
 Interactive PDF upload and text display via Gradio, fully Dockerized for optional deployment.
 
-## Demo
+## 🎬Demo
 ![gradio ui](https://github.com/estelacode/pdf_text_extractor/blob/master/docs/ui%20gradio/gradio_ui.jpg)
 ![gradio_ui_text_extraction_methods](https://github.com/estelacode/pdf_text_extractor/blob/master/docs/ui%20gradio/gradio_ui_text_extraction_methods.jpg)
 ![Llama-Parse Output](https://github.com/estelacode/pdf_text_extractor/blob/master/docs/outputs/llamaparse/llamaparse_output.jpg)
@@ -19,7 +19,7 @@ Interactive PDF upload and text display via Gradio, fully Dockerized for optiona
 - Dockerized deployment for quick and reproducible setup
 - Architecture documentation with high-level, sequence, and flow diagrams
 
-## Architecture
+## 🧩 Architecture
 High-level structure of the application:
 ![High Level Architecture Diagram](docs/diagrams/high_level_architecture_diagram.jpg)
 
@@ -35,46 +35,43 @@ High-level structure of the application:
 6. Backend returns results to  Frontend.
 7. Frontend displays extracted text to user.
 
-## Tech Stack
-Backend:
+## 💻 Tech Stack
+Backend: 
+![Python](https://img.shields.io/badge/Python-DDDDDD?style=for-the-badge&logo=python&logoColor=black)![3.13.3](https://img.shields.io/badge/3.13.3-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) 
+![uv](https://img.shields.io/badge/uv-DDDDDD?style=for-the-badge&logo=uv&logoColor=black)![0.9.13](https://img.shields.io/badge/%3E%3D0.9.13-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) 
+![llama-cloud-services](https://img.shields.io/badge/llama--cloud--services-DDDDDD?style=for-the-badge&logoColor=black)![>=0.6.35](https://img.shields.io/badge/%3E%3D0.6.35-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3) 
+![PyMuPDF](https://img.shields.io/badge/PyMuPDF-DDDDDD?style=for-the-badge&logoColor=black)![>=1.26.1](https://img.shields.io/badge/%3E%3D1.26.1-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
 
-![Python](https://img.shields.io/badge/Python-black?style=for-the-badge&logo=python&logoColor=white)![3.13.3](https://img.shields.io/badge/3.13.3-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
-![uv](https://img.shields.io/badge/uv-black?style=for-the-badge&logo=uv&logoColor=white)![0.9.13](https://img.shields.io/badge/%3E%3D0.9.13-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
-![llama-cloud-services](https://img.shields.io/badge/llama--cloud--services-black?style=for-the-badge&logoColor=white)![>=0.6.35](https://img.shields.io/badge/%3E%3D0.6.35-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
-![PyMuPDF](https://img.shields.io/badge/PyMuPDF-black?style=for-the-badge&logoColor=white)![>=1.26.1](https://img.shields.io/badge/%3E%3D1.26.1-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
-
-Frontend:
-
-![Gradio](https://img.shields.io/badge/Gradio-black?style=for-the-badge&logo=gradio&logoColor=white)![5.34.2](https://img.shields.io/badge/5.34.2-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
+Frontend: 
+![Gradio](https://img.shields.io/badge/Gradio-DDDDDD?style=for-the-badge&logo=gradio&logoColor=black)![5.34.2](https://img.shields.io/badge/5.34.2-3c64f3?style=for-the-badge&logoColor=white&labelColor=3c64f3&color=3c64f3)
 
 Infrastructure:
+![Docker](https://img.shields.io/badge/Docker-DDDDDD?style=for-the-badge&logo=docker&logoColor=2496ED)
 
-![Docker](https://img.shields.io/badge/Docker-black?style=for-the-badge&logo=docker&logoColor=white)
-
-## Setup
+## ⚙️ Setup
 ```bash
 git clone https://github.com/estelacode/pdf_text_extractor.git
 cd pdf_text_extractor
 
-### Create & activate virtual environment
+# Create & activate virtual environment
 py -3.13 -m venv .venv
 source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate     # Windows
 
-### Install dependencies
+# Install dependencies
 uv pip install -e .
 
-### Configure environment
+# Configure environment
 Configure .env file (copy from .env.example)
 ```
 
-## Usage 
+## ▶️ Usage 
 ```bash
 uv run main.py
 # Navigate to http://localhost:7860/
 ```
 
-## Project Structure
+## 📂 Project Structure
 ```bash
 pdf_text_extractor/
 ├── .dockerignore        # Files and folders to exclude from Docker builds
@@ -95,7 +92,7 @@ pdf_text_extractor/
 └── uv.lock              # Dependency lock file for uv
 ```
 
-## 10. Roadmap 
+## 🚀 Roadmap 
 - Improve text extraction: Maintain original structure, including paragraphs, headings, and columns
 - Add image extraction: Detect and save images from PDFs.
 - Add table extraction: Detect tables and export them as CSV or JSON.
@@ -103,7 +100,7 @@ pdf_text_extractor/
 - Add automated tests
 - Deploy to cloud: Make the app accessible from anywhere
 
-## 11. Build & Deployment
+## 🛠️ DevOps/ Build / Deployment
 
 ### Build the artifact
 ```bash
@@ -122,7 +119,7 @@ docker run -d -p 8080:8080 pdf_text_extractor
 docker run -d -p 8080:8080 -e LLAMA_CLOUD_API_KEY="YOUR_API_KEY" pdf_text_extractor
 ```
 
-## 12. Resources / References
+## References
 Tools & Frameworks
 * [Gradio](https://www.gradio.app/docs)  – For building web interfaces.
 * [Docker Desktop Community](https://docs.docker.com/) – Containerization and deployment.
@@ -137,3 +134,4 @@ PDF Procesing Libraries
 
 ### 👋 Author
 Estela Madariaga
+
